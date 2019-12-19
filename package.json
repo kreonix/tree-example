@@ -1,0 +1,40 @@
+{
+  "name": "tree-js-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "run-s dev:js webpack-server",
+    "build": "run-s prebuild build:dir build:js",
+    "webpack-server": "webpack-dev-server --env.NODE_ENV=dev --progress --color --open --hot",
+    "webpack-watch": "webpack --env.NODE_ENV=dev --progress --color --watch --hot",
+    "dev:js": "webpack --env.NODE_ENV=dev",
+    "build:dir": "copyfiles -a -u 2 src/public/assets/**/*.* build/",
+    "build:js": "webpack --env.NODE_ENV=prod --progress --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreonix/three-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kreonix/three-example/issues"
+  },
+  "homepage": "https://github.com/kreonix/three-example#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "autoprefixer": "^9.7.3",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.2",
+    "style-loader": "^1.0.2",
+    "three": "^0.111.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.0"
+  }
+}
